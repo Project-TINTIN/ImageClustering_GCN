@@ -2,7 +2,7 @@
 
 Adapted from dgl/examples/pytorch/hilander/
 
-Setup
+Setup  
 conda create -n Hilander # create env  
 conda activate Hilander # activate env  
 conda install pytorch==1.7.0 torchvision==0.8.0 cudatoolkit=10.2 -c pytorch # install pytorch 1.7 version  
