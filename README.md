@@ -27,7 +27,7 @@ Note that the model will be saved at the model_filename args
 test_subgCustom.py  
 Similar to train, edit root_folder and test_data  
 
-inference.py
+inference.py  
 For inference without labels, also some visualization  
 Similar to train, edit root_folder and test_data  
 Note the test_data still has a dummy label so I can reuse the testing code  
