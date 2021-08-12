@@ -21,7 +21,7 @@ Variables to edit are root_folder and train_data
 train_data is an annotation file in the format below  
 subpath, index  
 subpath, index ...  
-.npy files are expected to be found in root_folder + subpath 
+.npy files are expected to be found in root_folder + subpath   
 Note that the model will be saved at the model_filename args
 
 test_subgCustom.py  
