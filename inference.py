@@ -160,13 +160,15 @@ for level in range(args.levels):
     )
 
 res_folder_root = "D:/Data/GE2020/results/"
+image_folder_root = "D:/Data/GE2020/" 
+test_result_txt = "D:/Data/GE2020/test_results.txt"
+test_result_arr_txt = "D:/Data/GE2020/test_results_arr.txt"
 for peakNum in range(len(global_peaks)):
     res_folder = res_folder_root + "cluster_" + str(peakNum)
     pathlib.Path(res_folder).mkdir(parents=True, exist_ok=True)
 
 count_arr = np.zeros(len(global_peaks))
-image_folder_root = "D:/Data/GE2020/" 
-with open("D:/Data/GE2020/test_results.txt", 'w') as f:
+with open(test_result_txt, 'w') as f:
     count = 0
     for pred in global_pred_labels:
         embed_file = data_labels.iloc[count, 0]
@@ -197,7 +199,7 @@ with open("D:/Data/GE2020/test_results.txt", 'w') as f:
             cv2.rectangle(image, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), color, 2)
             cv2.putText(image, str(bbox[4]), (int(bbox[0])-1, int(bbox[1])-4),cv2.FONT_HERSHEY_COMPLEX,0.7,(0,255,0),1)
             
-            output_path = "D:/Data/GE2020/results/cluster_" + str(pred) + "/" + image_file.replace("/", "_")
+            output_path = res_folder_root + "cluster_" + str(pred) + "/" + image_file.replace("/", "_")
             if count%100 == 0:
                 print(output_path)
             cv2.imwrite(output_path, image)
@@ -206,7 +208,7 @@ with open("D:/Data/GE2020/test_results.txt", 'w') as f:
         count = count + 1
         count_arr[pred] = count_arr[pred] + 1
 
-with open("D:/Data/GE2020/test_results_arr.txt", 'w') as f:
+with open(test_result_arr_txt, 'w') as f:
     for idx in range(len(global_peaks)):
         f.write(str(count_arr[idx]) + "\n")
 
