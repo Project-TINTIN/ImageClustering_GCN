@@ -54,8 +54,8 @@ else:
 ##################
 # Data Preparation
 root_folder = "D:/Data/VGG-Face2/data/train_embed/"
-train_data = "D:/Data/VGG-Face2/data/TrainEmbedAnnoShort.txt"
-data_labels = pd.read_csv(train_data)
+test_data = "D:/Data/VGG-Face2/data/TestEmbedAnnoShort.txt"
+data_labels = pd.read_csv(test_data)
 num_data = len(data_labels)
 labels = np.empty(num_data)
 features = np.empty((num_data, 512))
