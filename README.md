@@ -23,3 +23,7 @@ train_data is an annotation file in the format below
 subpath, index  
 subpath, index ...  
 .npy files are expected to be found in root_folder + subpath  
+
+test_subgCustom.py  
+Similar to train, edit root_folder and test_data  
+
